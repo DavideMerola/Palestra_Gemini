@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>Gym PWA</title>
+    <link rel="stylesheet" href="style.css" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+  </head>
+  <body>
+    <div id="sidebar" class="sidebar">
+      <a href="javascript:void(0)" class="closebtn" onclick="toggleNav()"
+        >&times;</a
+      >
+      <h2 style="color: white; padding-left: 20px">Gym Menu</h2>
+      <button onclick="renderExercises()">🏠 I miei Esercizi</button>
+      <button
+        onclick="finishWorkout()"
+        style="color: #28a745; font-weight: bold"
+      >
+        ✅ Salva Allenamento
+      </button>
+      <button onclick="showHistory()">📊 Storico Progressi</button>
+      <hr style="border: 0.5px solid #333; margin: 20px 0" />
+      <button onclick="clearHistory()" style="color: #ff4444; font-size: 14px">
+        🗑️ Reset Totale
+      </button>
+    </div>
+
+    <header>
+      <span class="openbtn" onclick="toggleNav()">&#9776; Palestra</span>
+      <button id="add-btn" onclick="openModal()">+ Nuovo</button>
+    </header>
+
+    <main id="main-content">
+      <div id="exercise-list"></div>
+    </main>
+
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <h3 id="modal-title">Configura Esercizio</h3>
+        <input type="hidden" id="ex-id" />
+        <input type="text" id="ex-name" placeholder="Nome Esercizio" />
+        <div class="input-group">
+          <input type="number" id="ex-sets" placeholder="Serie" />
+          <input type="number" id="ex-reps" placeholder="Reps" />
+        </div>
+        <div class="input-group">
+          <input type="text" id="ex-rest" placeholder="Recupero" />
+          <input type="text" id="ex-weight" placeholder="Peso (kg)" />
+        </div>
+        <input type="url" id="ex-video" placeholder="Link Video (YouTube)" />
+
+        <div class="modal-buttons">
+          <button onclick="saveExercise()" class="save-btn">Salva</button>
+          <button id="complete-btn-modal" class="complete-btn">
+            Segna Completato
+          </button>
+          <button onclick="closeModal()" class="cancel-btn">Annulla</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

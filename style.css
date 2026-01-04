@@ -1,0 +1,25 @@
+:root {
+    --bg-color: #121212; --card-bg: #1e1e1e;
+    --primary: #007bff; --success: #28a745; --text: #ffffff;
+}
+body { font-family: -apple-system, system-ui, sans-serif; background-color: var(--bg-color); color: var(--text); margin: 0; }
+header { background: #1f1f1f; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; position: fixed; top: 0; width: 100%; box-sizing: border-box; z-index: 100; }
+.openbtn { font-size: 24px; cursor: pointer; }
+#add-btn { background: var(--primary); color: white; border: none; padding: 8px 15px; border-radius: 8px; font-weight: bold; }
+main { padding: 80px 15px 20px 15px; }
+.exercise-card { background: var(--card-bg); margin-bottom: 12px; padding: 15px; border-radius: 12px; display: flex; justify-content: space-between; align-items: center; border-left: 5px solid var(--primary); }
+.exercise-card.completed { border-left-color: var(--success); opacity: 0.4; }
+.info h4 { margin: 0 0 5px 0; font-size: 18px; }
+.info p { margin: 0; color: #bbb; font-size: 14px; }
+.sidebar { height: 100%; width: 0; position: fixed; z-index: 200; top: 0; left: 0; background-color: #111; overflow-x: hidden; transition: 0.3s; padding-top: 60px; }
+.sidebar button { display: block; width: 100%; padding: 15px 20px; background: none; color: #ccc; border: none; text-align: left; font-size: 18px; }
+.sidebar .closebtn { position: absolute; top: 10px; right: 25px; font-size: 36px; color: white; text-decoration: none; }
+.modal { display: none; position: fixed; z-index: 300; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); }
+.modal-content { background: #252525; margin: 15% auto; padding: 20px; width: 85%; border-radius: 15px; }
+.input-group { display: flex; gap: 10px; }
+input { width: 100%; margin: 8px 0; padding: 12px; border-radius: 8px; border: 1px solid #444; background: #333; color: white; box-sizing: border-box; }
+.modal-buttons { display: flex; flex-direction: column; gap: 10px; margin-top: 15px; }
+.save-btn { background: var(--success); color: white; border: none; padding: 12px; border-radius: 8px; font-weight: bold; }
+.complete-btn { background: var(--primary); color: white; border: none; padding: 12px; border-radius: 8px; }
+.cancel-btn { background: #444; color: white; border: none; padding: 10px; border-radius: 8px; }
+.history-card { background: #252525; padding: 15px; border-radius: 10px; margin-bottom: 15px; border-left: 3px solid var(--success); }
